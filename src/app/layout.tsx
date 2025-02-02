@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ngaos App",
-  description: "Ngaos App is islamic aplication for muslim user in Indonesia",
+  title: "Islamic App",
+  description: "Islamic App is islamic aplication for muslim user in Indonesia",
 };
 
 export default function RootLayout({
