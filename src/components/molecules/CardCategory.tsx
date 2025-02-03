@@ -9,14 +9,14 @@ const CardCategory = (props: ICardCategory) => {
     <>
       <Link
         href={ path }
-        className="border border-[#1b76ff] rounded-lg p-4 text-center w-full cursor-pointer hover:bg-blue-100"
+        className="border border-[#1b76ff] rounded-lg p-1 py-4 text-center w-full cursor-pointer hover:bg-blue-100"
       >
         <div className="mb-4 table m-auto text-[#1b76ff]">
           { icon }
         </div>
 
         <div>
-          <span className="font-light text-[#1b76ff] text-sm">
+          <span className="font-light text-[#1b76ff] text-xs">
             { name }
           </span>
         </div>
