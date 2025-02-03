@@ -1,4 +1,4 @@
-import { ICardCategory, ICardPraySchedule } from "@/interfaces/global";
+import { ICardCategory } from "@/interfaces/global";
 
 import CardCategory from "@/components/molecules/CardCategory";
 
