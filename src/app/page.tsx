@@ -1,22 +1,93 @@
-import { Button } from "@/components/ui/button";
-import { Terminal } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { ICardCategory, ICardPraySchedule } from "@/interfaces/global";
+
+import CardCategory from "@/components/molecules/CardCategory";
+
+import { FaQuran, FaPray } from "react-icons/fa";
+import { VscBook } from "react-icons/vsc";
+import { RxCounterClockwiseClock } from "react-icons/rx";
+import { LuBookText } from "react-icons/lu";
+import { PiBookOpenTextLight } from "react-icons/pi";
+import { BsCalendar4Event } from "react-icons/bs";
+import { TbPray } from "react-icons/tb";
+import { LiaCompassSolid } from "react-icons/lia";
+import HeroTimeHome from "@/components/organisms/HeroTimeHome";
+
+interface IState {
+  categories: ICardCategory[]
+}
 
 export default function Home() {
+
+  const state: IState = {
+    categories: [
+      {
+        icon: <FaQuran size={50} />,
+        name: 'Al-Quran',
+        path: '/alquran'
+      },
+      {
+        icon: <FaPray size={50} />,
+        name: 'Jadwal Sholat',
+        path: '/sholat'
+      },
+      {
+        icon: <VscBook size={50} />,
+        name: 'Doa Harian',
+        path: '/doa-harian'
+      },
+      {
+        icon: <RxCounterClockwiseClock size={50} />,
+        name: 'Tasbih',
+        path: '/tasbih'
+      },
+      {
+        icon: <LuBookText size={50} />,
+        name: 'Asmaul Husna',
+        path: '/asmaul-husna'
+      },
+      {
+        icon: <PiBookOpenTextLight size={50} />,
+        name: 'Hadits',
+        path: '/hadits'
+      },
+      {
+        icon: <BsCalendar4Event size={50} />,
+        name: 'Jadwal Imsak',
+        path: '/jadwal-imsak'
+      },
+      {
+        icon: <TbPray size={50} />,
+        name: 'Zikir',
+        path: '/zikir'
+      },
+      {
+        icon: <LiaCompassSolid size={50} />,
+        name: 'Kiblat',
+        path: '/kiblat'
+      }
+    ]
+  }
+
   return (
-    <div className="p-4">
-      <Button>Default</Button>&nbsp;
-      <Button variant="destructive">Destructive</Button>
+    <>
+      <HeroTimeHome />
 
-      <div className="mb-5" />
+      <section className="my-2 p-4">
+        <div className="text-[#323334] font-bold text-lg mb-6 border-b pb-4">
+          Semua Fitur 
+        </div>
 
-      <Alert>
-        <Terminal className="h-4 w-4" />
-        <AlertTitle>Heads up!</AlertTitle>
-        <AlertDescription>
-          You can add components and dependencies to your app using the cli.
-        </AlertDescription>
-      </Alert>
-    </div>
+        <section className="grid grid-cols-3 gap-4">
+          { state.categories.map((category, idx) => (
+            <CardCategory
+              key={idx}
+              icon={category.icon}
+              name={category.name}
+              path={category.path}
+            />
+          )) }
+        </section>
+      </section>
+    </>
   );
 }
