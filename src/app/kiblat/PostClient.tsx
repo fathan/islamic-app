@@ -2,7 +2,14 @@
 
 import { useEffect } from "react";
 
-export default function PostsClient({ posts }: { posts: any[] }) {
+interface IPost {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export default function PostsClient({ posts }: { posts: IPost[] }) {
   useEffect(() => {
     console.log("Client mounted");
   }, []);
