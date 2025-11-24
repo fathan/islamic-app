@@ -1,4 +1,3 @@
-// app/kiblat/PostsClient.tsx
 "use client";
 
 import { useEffect } from "react";
