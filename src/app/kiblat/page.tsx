@@ -1,4 +1,3 @@
-// app/kiblat/page.tsx (SERVER COMPONENT)
 import PostsClient from "./PostClient";
 import { getPosts } from "./actions";
 

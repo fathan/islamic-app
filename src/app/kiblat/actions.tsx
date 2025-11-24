@@ -1,4 +1,3 @@
-// lib/getPosts.ts
 export async function getPosts() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "force-cache",
