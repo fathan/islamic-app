@@ -21,18 +21,6 @@ const SurahDetail = async ({ params }: { params: { surah: string } }) => {
   const data = await response[numberSurah];
 
   return (
-    // <section className="p-4 flex flex-col gap-4">
-    //   {data.nama}
-
-    //   <div className="bg-white rounded-lg p-4 border border-gray-200 text-center font-arabic text-2xl">
-    //     بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
-    //   </div>
-
-    //   {[1, 2, 3, 4, 5].map((item, index) => (
-    //     <AyahItem key={index} />
-    //   ))}
-    // </section>
-
     <div className="p-6 space-y-6">
       {/* Judul Surat */}
       <div className="text-center">
@@ -46,12 +34,12 @@ const SurahDetail = async ({ params }: { params: { surah: string } }) => {
       {/* Ayat + Terjemahan */}
       <div className="space-y-6 mt-6">
         {Object.keys(data.text).map((key) => (
-          <div key={key} className="border-b pb-3">
-            <p className="text-right text-2xl mb-2">{data.text[key]}</p>
-            <p className="text-gray-700">
-              {data.translations.id.text[key]}
-            </p>
-          </div>
+          <AyahItem
+            key={key}
+            number={key}
+            text={data.text[key]}
+            translation={data.translations.id.text[key]}
+          />
         ))}
       </div>
     </div>

@@ -1,27 +1,35 @@
 import { FaBookmark, FaCopy, FaForward, FaInfo, FaPlay } from "react-icons/fa";
 
-const AyahItem = () => {
+interface IProps {
+  number: number | string;
+  text: string;
+  translation: string;
+}
+
+const AyahItem = async (props: IProps) => {
+  const { number, text, translation } = await props;
+
   return (
     <div className="bg-white rounded-lg p-4 border border-gray-200 flex flex-col gap-4">
       <div className="flex flex-col gap-4">
         <div className="flex justify-between items-center">
           <div className="font-semibold text-base">
-            1
+            {number}
           </div>
           <div className="font-light text-sm">
             -
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 font-arabic text-xl">
+        <div className="flex flex-col gap-4 font-arabic text-2xl">
           <div className="text-right">
-            الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+            {text}
           </div>
         </div>
 
         <div className="flex justify-end">
           <div className="font-light text-sm italic">
-            Segala puji bagi Allah, Tuhan semesta alam.
+            {translation}
           </div>
         </div>
       </div>
