@@ -12,7 +12,8 @@ export async function GET(req: Request, context: { params: { surah: string } }) 
     const json = JSON.parse(file);
 
     return NextResponse.json(json);
-  } catch (error) {
+  } catch (error: any) {
+    console.error(error);
     return NextResponse.json({ error: "Surah not found" }, { status: 404 });
   }
 }
