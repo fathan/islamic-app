@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 
 export async function GET(
   req: Request,
@@ -9,18 +7,15 @@ export async function GET(
   const { surah } = await context.params;
 
   try {
-    const filePath = path.join(
-      process.cwd(),
-      "src/database/surah",
-      `${surah}.json`
-    );
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/surah/${surah}.json`);
+    if (!res.ok) {
+      return NextResponse.json({ error: "Surah not found" }, { status: 404 });
+    }
 
-    const file = fs.readFileSync(filePath, "utf8");
-    const json = JSON.parse(file);
-
+    const json = await res.json();
     return NextResponse.json(json);
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: "Surah not found" }, { status: 404 });
+    console.error("API error:", error);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
