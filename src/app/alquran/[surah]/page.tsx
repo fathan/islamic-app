@@ -10,19 +10,21 @@ async function getSurah(surah: string) {
   return res.json();
 }
 
-const SurahDetail = async ({ params }: { params: { surah: string } }) => {
-  const { surah: numberSurah } = await params;
-  const response = await getSurah(numberSurah);
+export default async function SurahDetail(
+  { params }: { params: Promise<{ surah: string }> }
+) {
+  const { surah } = await params;
+
+  const response = await getSurah(surah);
 
   if (!response) {
     return <div className="p-6">Surah tidak ditemukan</div>;
   }
 
-  const data = await response[numberSurah];
+  const data = response[String(surah)];
 
   return (
     <div className="p-6 space-y-6">
-      {/* Judul Surat */}
       <div className="text-center">
         <h1 className="text-3xl font-bold">{data.name_latin}</h1>
         <p className="text-4xl mt-2">{data.name}</p>
@@ -31,7 +33,6 @@ const SurahDetail = async ({ params }: { params: { surah: string } }) => {
         </p>
       </div>
 
-      {/* Ayat + Terjemahan */}
       <div className="space-y-6 mt-6">
         {Object.keys(data.text).map((key) => (
           <AyahItem
@@ -44,6 +45,4 @@ const SurahDetail = async ({ params }: { params: { surah: string } }) => {
       </div>
     </div>
   );
-};
-
-export default SurahDetail;
+}
