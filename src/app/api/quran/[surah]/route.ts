@@ -7,7 +7,13 @@ export async function GET(
   const { surah } = await context.params;
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/surah/${surah}.json`);
+    // domain Vercel yang benar
+    const origin = new URL(req.url).origin;
+
+    const res = await fetch(`${origin}/surah/${surah}.json`, {
+      cache: "no-store",
+    });
+
     if (!res.ok) {
       return NextResponse.json({ error: "Surah not found" }, { status: 404 });
     }
