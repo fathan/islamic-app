@@ -23,14 +23,21 @@ export default async function SurahDetail(
 
   const data = response[String(surah)];
 
+  console.log(data);
+
   return (
     <div className="p-6 space-y-6">
-      <div className="text-center">
-        <h1 className="text-3xl font-bold">{data.name_latin}</h1>
-        <p className="text-4xl mt-2">{data.name}</p>
-        <p className="text-sm text-gray-500 mt-1">
-          Jumlah Ayat: {data.number_of_ayah}
-        </p>
+      <div className="animated-background bg-gradient-to-r from-cyan-500 to-[#1b76ff] py-4 rounded-lg text-white">
+        <div className="flex justify-between items-center mb-4 p-3">
+          <div className="flex flex-col text-left"> 
+            <h1 className="text-xl">{data.name_latin}</h1>
+            <p className="text-sm">{data.translations.id.name} - {data.number_of_ayah} Ayat</p>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <p className="text-xl">{data.name}</p>
+          </div>
+        </div>
       </div>
 
       <div className="space-y-6 mt-6">
@@ -40,6 +47,7 @@ export default async function SurahDetail(
             number={key}
             text={data.text[key]}
             translation={data.translations.id.text[key]}
+            tafsir={data.tafsir.id.kemenag.text[key]}
           />
         ))}
       </div>

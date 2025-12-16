@@ -30,11 +30,6 @@ export default function Home() {
         path: '/doa-harian'
       },
       {
-        icon: <FaPray size={50} />,
-        name: 'Jadwal Sholat',
-        path: '/sholat'
-      },
-      {
         icon: <RxCounterClockwiseClock size={50} />,
         name: 'Tasbih',
         path: '/tasbih'
@@ -45,6 +40,11 @@ export default function Home() {
         path: '/asmaul-husna'
       },
       {
+        icon: <FaPray size={50} />,
+        name: 'Jadwal Sholat',
+        path: '/sholat'
+      },
+      {
         icon: <PiBookOpenTextLight size={50} />,
         name: 'Hadits',
         path: '/hadits'
@@ -52,7 +52,7 @@ export default function Home() {
       {
         icon: <BsCalendar4Event size={50} />,
         name: 'Jadwal Imsak',
-        path: '/jadwal-imsak'
+        path: '/jadwal-imsakiyah'
       },
       {
         icon: <TbPray size={50} />,

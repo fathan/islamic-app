@@ -15,27 +15,27 @@ const HeroTimeHome: React.FC = () => {
       {
         title: 'Subuh',
         icon: <FaQuran size={20} />,
-        time: '04:41'
+        time: '00:00'
       },
       {
         title: 'Dzuhur',
         icon: <FaQuran size={20} />,
-        time: '04:41'
+        time: '00:00'
       },
       {
         title: 'Ashar',
         icon: <FaQuran size={20} />,
-        time: '04:41'
+        time: '00:00'
       },
       {
         title: 'Maghrib',
         icon: <FaQuran size={20} />,
-        time: '04:41'
+        time: '00:00'
       },
       {
         title: 'Isya',
         icon: <FaQuran size={20} />,
-        time: '04:41'
+        time: '00:00'
       }
     ]
   }

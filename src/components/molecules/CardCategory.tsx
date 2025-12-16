@@ -11,7 +11,7 @@ const CardCategory = (props: ICardCategory) => {
         href={ path }
         className="border border-[#ced0d3] rounded-lg p-1 py-4 text-center w-full cursor-pointer hover:bg-blue-100"
       >
-        <div className="mb-4 table m-auto text-[#97a4b8]">
+        <div className="mb-2 table m-auto text-[#97a4b8]">
           { icon }
         </div>
 

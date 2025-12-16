@@ -1,7 +1,9 @@
+import FeatureUnavailable from "@/components/shared/molecules/FeatureUnavailable";
+
 const Sholat: React.FC = () => {
   return (
     <div className="p-4">
-      Jadwal Sholat
+      <FeatureUnavailable />
     </div>
   )
 };
