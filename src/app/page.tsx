@@ -9,7 +9,6 @@ import { LuBookText } from "react-icons/lu";
 import { PiBookOpenTextLight } from "react-icons/pi";
 import { BsCalendar4Event } from "react-icons/bs";
 import { TbPray } from "react-icons/tb";
-import { LiaCompassSolid } from "react-icons/lia";
 import HeroTimeHome from "@/components/organisms/HeroTimeHome";
 
 interface IState {

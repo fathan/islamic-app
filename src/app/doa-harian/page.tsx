@@ -1,3 +1,10 @@
+interface IDoa {
+  title: string;
+  text: string;
+  latin: string;
+  translation: string;
+}
+
 async function getDailyDoa () {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/doa`,
@@ -19,7 +26,7 @@ export default async function DoaHarian () {
 
   return (
     <div className="p-6 space-y-6">
-      {data.doaList.map((doa: any, index: number) => (
+      {data.doaList.map((doa: IDoa, index: number) => (
         <div key={index} className="border pb-4 bg-gray-100 rounded-lg shadow-md p-4">
           <h2 className="text-xl font-semibold mb-10">{doa.title}</h2>
           <p className="text-3xl mb-2 font-extralight">{doa.text}</p>
