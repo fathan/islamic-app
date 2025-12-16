@@ -1,20 +1,18 @@
 import { NextResponse } from "next/server";
 
 export async function GET(
-  req: Request,
-  context: { params: Promise<{ surah: string }> }
+  req: Request
 ) {
-  const { surah } = await context.params;
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/surah/${surah}.json`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/doa/doa.json`,
       {
         cache: "no-store",
       }
     );
     if (!res.ok) {
-      return NextResponse.json({ error: "Surah not found" }, { status: 404 });
+      return NextResponse.json({ error: "Doa not found" }, { status: 404 });
     }
 
     const json = await res.json();

@@ -16,7 +16,7 @@ const Alquran: React.FC = () => {
   return (
     <div className="p-4 flex flex-col gap-4">
       <>
-        <div className="animated-background bg-gradient-to-r from-cyan-500 to-[#1b76ff] p-4 rounded-xl shadow-lg">
+        {/* <div className="animated-background bg-gradient-to-r from-cyan-500 to-[#1b76ff] p-4 rounded-xl shadow-lg">
           <div className="font-semibold text-white text-lg">
             Terakhir Dibaca
           </div>
@@ -26,7 +26,7 @@ const Alquran: React.FC = () => {
           <div className="font-light text-white text-sm">
             Ayat ke 3
           </div>
-        </div>
+        </div> */}
 
         {
           optionsSurahList.map((item, index) => (

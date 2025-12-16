@@ -26,14 +26,14 @@ export default function Home() {
         path: '/alquran'
       },
       {
-        icon: <FaPray size={50} />,
-        name: 'Jadwal Sholat',
-        path: '/sholat'
-      },
-      {
         icon: <VscBook size={50} />,
         name: 'Doa Harian',
         path: '/doa-harian'
+      },
+      {
+        icon: <FaPray size={50} />,
+        name: 'Jadwal Sholat',
+        path: '/sholat'
       },
       {
         icon: <RxCounterClockwiseClock size={50} />,
@@ -59,11 +59,6 @@ export default function Home() {
         icon: <TbPray size={50} />,
         name: 'Zikir',
         path: '/zikir'
-      },
-      {
-        icon: <LiaCompassSolid size={50} />,
-        name: 'Kiblat',
-        path: '/kiblat'
       }
     ]
   }
