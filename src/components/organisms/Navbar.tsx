@@ -1,12 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { CiDark, CiMenuBurger } from "react-icons/ci";
-import { useState } from "react";
+import { useTheme } from "next-themes";
+import { CiDark, CiMenuBurger, CiSun } from "react-icons/ci";
+import { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
 
 const NavbarHeader: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
 
   return (
     <>
@@ -16,7 +23,7 @@ const NavbarHeader: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsSidebarOpen(true)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             <CiMenuBurger size={30} />
           </button>
@@ -30,10 +37,11 @@ const NavbarHeader: React.FC = () => {
 
           {/* Dark mode icon */}
           <button
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="inline-flex items-center p-2 w-10 h-10 justify-center rounded-lg
+            hover:bg-gray-100 dark:hover:bg-gray-700"
           >
-            <CiDark size={30} />
+            {theme === "dark" ? <CiSun size={30} /> : <CiDark size={30} />}
           </button>
         </div>
       </nav>

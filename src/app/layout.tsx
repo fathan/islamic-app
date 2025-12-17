@@ -3,6 +3,7 @@ import "./../styles/globals.css";
 
 import NavbarHeader from "@/components/organisms/Navbar";
 import Footer from "@/components/organisms/Footer";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Islamic App",
@@ -14,12 +15,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <main className="bg-[#f5f5f5]">
-          <div className="flex flex-col w-full relative 5:pt-[100px] max-w-[500px] my-0 mx-auto bg-white box-border overflow-hidden">
-            <NavbarHeader />
-            
-            {children}
-
-            <Footer />
+          <div className="flex flex-col w-full relative 5:pt-[100px] max-w-[500px] my-0 mx-auto bg-white dark:bg-gray-900 box-border overflow-hidden">
+            <Providers>
+              <NavbarHeader />
+              {children}
+              <Footer />
+            </Providers>
           </div>
         </main>
       </body>
