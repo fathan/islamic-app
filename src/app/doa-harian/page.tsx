@@ -27,7 +27,7 @@ export default async function DoaHarian () {
   return (
     <div className="p-6 space-y-6">
       {data.doaList.map((doa: IDoa, index: number) => (
-        <div key={index} className="border pb-4 bg-white rounded-lg p-4">
+        <div key={index} className="border pb-4 bg-white dark:bg-slate-800 rounded-lg p-4">
           <h2 className="text-xl font-semibold mb-10">
             {doa.title}
           </h2>

@@ -27,9 +27,9 @@ export default async function AsmaulHusna () {
   return (
     <div className="p-6 space-y-4">
       {data.map((doa: IAsmaulHusna, index: number) => (
-        <div key={index} className="flex justify-between border pb-4 bg-white rounded-lg p-4 py-2 w-full">
-          <div className="flex flex-row gap-2">
-            <div className="rounded-full bg-blue-100 text-blue-950 w-12 h-12 flex items-center justify-center font-semibold">
+        <div key={index} className="flex justify-between border pb-4 bg-white dark:bg-slate-800 rounded-lg p-4 py-2 w-full">
+          <div className="flex flex-row gap-5">
+            <div className="rounded-full bg-blue-100 text-blue-950 w-8 h-8 flex items-center justify-center font-semibold">
               {index + 1}
             </div>
 

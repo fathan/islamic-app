@@ -12,9 +12,9 @@ const QuranList = (props: Iprops) => {
 
   return (
     <>
-      <div className="flex flex-row gap-3 border rounded-lg px-4 py-3 shadow-sm bg-white">
+      <div className="flex flex-row gap-3 border rounded-lg px-4 py-3 shadow-sm bg-white dark:bg-slate-800">
         <div>
-          <div className="rounded-full bg-blue-100 text-blue-950 w-12 h-12 flex items-center justify-center">
+          <div className="rounded-full bg-blue-100 text-blue-950 w-9 h-9 flex items-center justify-center">
             {number}
           </div>
         </div>
@@ -24,7 +24,7 @@ const QuranList = (props: Iprops) => {
             {name}
           </div>
 
-          <div className="text-xs text-gray-600">
+          <div className="text-xs text-gray-600 dark:text-gray-100 font-light">
             {translation} - {numberOfAyah} Ayat
           </div>
         </div>

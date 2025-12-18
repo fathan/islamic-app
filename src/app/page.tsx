@@ -67,7 +67,7 @@ export default function Home() {
       <HeroTimeHome />
 
       <section className="my-2 p-4">
-        <div className="text-[#323334] dark:text-[#71bbd3] font-bold text-lg mb-6 border-b dark:border-b-[#71bbd3] pb-4">
+        <div className="text-[#323334] dark:text-[#98a2a5] font-bold text-lg mb-6 border-b dark:border-b-[#98a2a5] pb-4">
           Semua Fitur 
         </div>
 

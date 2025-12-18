@@ -27,7 +27,7 @@ const Tasbih: React.FC = () => {
         <div className="flex gap-3 relative">
           <button
             onClick={() => setShowStep(!showStep)}
-            className="bg-zinc-800 text-white px-5 py-2 rounded-full text-sm flex items-center gap-1"
+            className="bg-zinc-800 dark:bg-blue-800 text-white px-5 py-2 rounded-full text-sm flex items-center gap-1"
           >
             +{step}
             <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -36,7 +36,7 @@ const Tasbih: React.FC = () => {
           </button>
 
           {showStep && (
-            <div className="absolute top-12 left-0 bg-zinc-900 rounded-xl overflow-hidden shadow-lg">
+            <div className="absolute top-12 left-0 bg-zinc-900 dark:bg-blue-800 rounded-xl overflow-hidden shadow-lg">
               {[1, 10, 33, 99].map(v => (
                 <button
                   key={v}
@@ -54,38 +54,38 @@ const Tasbih: React.FC = () => {
 
           <button
             onClick={editCount}
-            className="bg-zinc-800 text-white px-6 py-2 rounded-full text-sm"
+            className="bg-zinc-800 dark:bg-blue-800 text-white px-6 py-2 rounded-full text-sm"
           >
             Edit
           </button>
 
           <button
             onClick={reset}
-            className="bg-zinc-800 text-white px-6 py-2 rounded-full text-sm"
+            className="bg-zinc-800 dark:bg-blue-800 text-white px-6 py-2 rounded-full text-sm"
           >
             Reset
           </button>
         </div>
 
-        <div className="text-blue-950 text-7xl font-light">
+        <div className="text-blue-950 dark:text-blue-300 text-7xl font-light">
           {count}
         </div>
 
         <div className="relative flex flex-col items-center">
           <button
             onClick={increment}
-            className="w-44 h-44 bg-blue-950 rounded-full flex items-center justify-center active:scale-95 transition"
+            className="w-44 h-44 bg-blue-950 dark:bg-blue-500 rounded-full flex items-center justify-center active:scale-95 transition"
           >
-            <svg className="w-16 h-16 text-blue-400" fill="none" stroke="currentColor" strokeWidth="4" viewBox="0 0 24 24">
+            <svg className="w-16 h-16 text-blue-400 dark:text-blue-300" fill="none" stroke="currentColor" strokeWidth="4" viewBox="0 0 24 24">
               <path d="M4 14l8-8 8 8" />
             </svg>
           </button>
 
           <button
             onClick={decrement}
-            className="absolute -bottom-6 w-14 h-14 bg-blue-950 rounded-full flex items-center justify-center border border-black active:scale-95 transition"
+            className="absolute -bottom-6 w-14 h-14 bg-blue-950 dark:bg-blue-500 rounded-full flex items-center justify-center border border-black active:scale-95 transition"
           >
-            <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-blue-400 dark:text-blue-300" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
               <path d="M6 10l6 6 6-6" />
             </svg>
           </button>

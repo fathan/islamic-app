@@ -23,11 +23,11 @@ const AyahItem = (props: IProps) => {
   const [showTafsir, setShowTafsir] = useState(false);
 
   return (
-    <div className="bg-white rounded-lg p-4 border border-gray-200 flex flex-col gap-4">
+    <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-950 flex flex-col gap-4">
       <div className="flex flex-col gap-4">
         {/* Header */}
         <div className="flex justify-between items-center mb-7">
-          <div className="rounded-full bg-blue-100 text-blue-950 w-12 h-12 flex items-center justify-center font-semibold">
+          <div className="rounded-full bg-blue-100 text-blue-950 w-9 h-9 flex items-center justify-center">
             {number}
           </div>
           <div className="font-light text-sm">-</div>
@@ -35,7 +35,7 @@ const AyahItem = (props: IProps) => {
 
         {/* Ayah */}
         <div className="flex flex-col gap-4 font-arabic text-4xl mb-7">
-          <div className="text-right leading-relaxed">{text}</div>
+          <div className="text-right leading-relaxed text-gray-600 dark:text-slate-200">{text}</div>
         </div>
 
         {/* Translation */}
@@ -47,7 +47,7 @@ const AyahItem = (props: IProps) => {
         <div className="border rounded-md">
           <button
             onClick={() => setShowTafsir(!showTafsir)}
-            className="w-full flex justify-between items-center px-3 py-2 text-sm font-semibold bg-gray-100 hover:bg-gray-200 transition"
+            className="w-full flex justify-between items-center px-3 py-2 text-sm font-semibold bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 transition"
           >
             <span>Tafsir</span>
             {showTafsir ? <FaChevronUp /> : <FaChevronDown />}
@@ -58,7 +58,7 @@ const AyahItem = (props: IProps) => {
               showTafsir ? "max-h-96 p-3" : "max-h-0 p-0"
             }`}
           >
-            <p className="text-sm font-light text-gray-700">
+            <p className="text-sm font-light text-gray-700 dark:text-gray-200">
               {tafsir || "Tidak ada tafsir tersedia."}
             </p>
           </div>

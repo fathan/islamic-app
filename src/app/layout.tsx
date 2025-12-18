@@ -18,7 +18,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="flex flex-col w-full relative 5:pt-[100px] max-w-[500px] my-0 mx-auto bg-white dark:bg-gray-900 box-border overflow-hidden">
             <Providers>
               <NavbarHeader />
-              {children}
+              <div className="pt-20">
+                {children}
+              </div>
               <Footer />
             </Providers>
           </div>
