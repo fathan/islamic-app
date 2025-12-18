@@ -17,7 +17,7 @@ const NavbarHeader: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed w-full bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="fixed w-[500px] bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
           {/* Hamburger */}
           <button
