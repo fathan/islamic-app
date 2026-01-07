@@ -17,40 +17,23 @@ const NavbarHeader: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed w-[500px] bg-white border-gray-200 dark:bg-gray-900">
-        <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-          {/* Hamburger */}
-          <button
-            type="button"
-            onClick={() => setIsSidebarOpen(true)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-          >
-            <CiMenuBurger size={30} />
+      <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-md bg-white dark:bg-gray-900 border-b">
+        <div className="flex items-center justify-between h-14 px-6">
+          <button onClick={() => setIsSidebarOpen(true)}>
+            <CiMenuBurger size={22} />
           </button>
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-semibold text-[#323334] dark:text-white">
-              Islamic App
-            </span>
-          </Link>
+          <span className="font-semibold">Islamic App</span>
 
-          {/* Dark mode icon */}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center rounded-lg
-            hover:bg-gray-100 dark:hover:bg-gray-700"
-          >
-            {theme === "dark" ? <CiSun size={30} /> : <CiDark size={30} />}
+          <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {theme === "dark" ? <CiSun /> : <CiDark />}
           </button>
         </div>
       </nav>
 
-      {/* Sidebar */}
-      <Sidebar
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-      />
+
+
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </>
   );
 };
